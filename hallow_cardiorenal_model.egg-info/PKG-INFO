@@ -1,8 +1,0 @@
-Metadata-Version: 2.4
-Name: hallow-cardiorenal-model
-Version: 0.2.0
-Summary: Coupled long-term Karaaslan/Hallow cardiovascular-kidney model with systemic RAAS and CVP extension
-Requires-Python: >=3.10
-Requires-Dist: numpy>=2.0
-Requires-Dist: scipy>=1.13
-Requires-Dist: matplotlib>=3.8
