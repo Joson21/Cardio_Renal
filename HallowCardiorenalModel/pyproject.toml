@@ -1,0 +1,17 @@
+[build-system]
+requires = ["setuptools>=69"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "hallow-cardiorenal-model"
+version = "0.2.0"
+description = "Coupled long-term Karaaslan/Hallow cardiovascular-kidney model with systemic RAAS and CVP extension"
+requires-python = ">=3.10"
+dependencies = [
+    "numpy>=2.0",
+    "scipy>=1.13",
+    "matplotlib>=3.8",
+]
+
+[tool.setuptools.packages.find]
+include = ["hallow_kidney*", "hallow_cardiorenal*"]
