@@ -1,0 +1,1778 @@
+
+
+=== PAGE 1 ===
+Annals of Biomedical Engineering , V ol. 33, No. 11, November 2005 (© 2005) pp. 1607–1630
+DOI: 10.1007/s10439-005-5976-4
+Long-Term Mathematical Model Involving Renal Sympathetic
+Nerve Activity, Arterial Pressure, and Sodium Excretion
+FATIH KARAASLAN,1 YAGMUR DENIZHAN,2 ABIDIN KAYSERILIOGLU,3 and H. OZCAN GULCUR1
+1Institute of Biomedical Engineering, Bogazici University; 2Electrical and Electronics Engineering Department, Bogazici
+University; and 3Sports Medicine Department, Istanbul Medical Faculty, Istanbul University
+(Received 13 September 2004; accepted 16 May 2005)
+Abstract—This paper presents a physiological long-term model
+of the cardiovascular system. It integrates the previous models
+developed by Guyton, Uttamsingh and Coleman. Additionally it
+introduces mechanisms of direct effects of the renal sympathetic
+nerve activity (rsna) on tubular sodium reabsorption and renin se-
+cretion in accordance with experimental data from literature. The
+resulting mathematical model constitutes the ﬁrst long-term model
+of the cardiovascular system accounting for the effects of rsna on
+kidney functions in such detail. The objective of developing such
+a model is to observe the consequences of long-term rsna increase
+and impairment of rsna inhibition under volume loading. This
+model provides an understanding of the rsna-related mechanisms,
+which cause mean arterial pressure increase in hypertension and
+total sodium amount increase (sodium retention) in congestive
+heart failure, nephrotic syndrome and cirrhosis.
+Keywords—Long-term cardiovascular system model, Hyperten-
+sion, Congestive heart failure, Nephrotic syndrome, Cirrhosis.
+INTRODUCTION
+It is known that kidneys play an important role in
+the maintenance of the long-term arterial pressure and
+body ﬂuid volume regulation. During the ﬁrst half of the
+20th century it was accepted that renal nerves have little
+functional importance. However, later, it has been demon-
+strated that renal nerves innervate on functionally important
+parts of the kidney. Next it was shown that renal nerves
+directly affect some important kidney functions.
+15 Further-
+more, clinical and experimental observations indicate an
+increase in renal sympathetic nerve activity (rsna) in cases
+of congestive heart failure, nephrotic syndrome and hep-
+atic cirrhosis, which have common clinical presentation
+of sodium retaining edema formation. The contribution of
+increased rsna to renal sodium retention in diseases men-
+tioned above was demonstrated by several clinical and ex-
+perimental studies.
+12
+Address correspondence to Yagmur Denizhan, Electrical and
+Electronics Engineering Department, Bogazici University, 34242, Bebek,
+Istanbul, Turkey. Electronic mail: denizhan@boun.edu.tr
+In view of the clinical importance of the long-term inter-
+action between rsna, arterial pressure and sodium excretion,
+a model has been developed, which integrates and improves
+the mathematical models of the cardiovascular system ex-
+isting in the literature.
+The most extensive mathematical model of the cardio-
+vascular system known in the literature is the one developed
+by Guyton et al.
+22 Other models related to the cardiovascu-
+lar system include Uttamsingh’s and Coleman’s models7,40
+which basically focus on the renal system. Although these
+models include most of the mechanisms responsible for
+blood volume control, the effects of the renal nerve are
+accounted for in only Guyton’s model
+22 and this in a very
+limited manner. Uttamsingh’s and Coleman’s models pro-
+vide a more detailed representation of the kidney, whereas
+Guyton represents it in a more compact manner.
+The model proposed in this paper integrates the advan-
+tageous parts of these models and also introduces the renal
+sympathetic nerve effect in a more extensive manner. The
+organization of the paper is as follows: Section II gives a
+comparison of the mathematical models of the cardiovas-
+cular/renal system known in the literature. In section III
+the proposed model is presented. Section IV includes the
+simulation results of the proposed model and their com-
+parison with clinical and experimental data. Section V the
+conclusions are summarized including the limitations of the
+model.
+SOME MATHEMATICAL MODELS OF THE
+CARDIOV ASCULAR/RENAL SYSTEM
+In 1967 Guyton published his ﬁrst cardiovascular
+model
+20 where he provided a basic understanding of the
+mutual effects of basic cardiovascular variables like mean
+arterial pressure, total peripheral resistance, cardiac output
+etc. His later model
+22 can be considered as the ﬁrst extensive
+mathematical model of the long-term (a few weeks) behav-
+ior of the cardiovascular system simulated on the computer.
+This model consists of a large set of coupled non-linear dif-
+ferential equations. The representation as a block diagram
+1607
+0090-6964/05/1100-1607/1 C⃝ 2005 Biomedical Engineering Society
+
+=== PAGE 2 ===
+1608 K ARAASLAN et al.
+includes, beside some integrators and gains, blocks with
+outputs representing physiological variables. Such blocks
+express the physiological variable under consideration as
+a function of other variables. When obtaining these func-
+tions, Guyton has integrated experimental and clinical data
+from a variety of sources. Since the model is supposed to
+account for the long-term behavior of the system, Guyton
+et al. have left the fast systolic and diastolic dynamics out
+of the scope and have represented the arterial pressure in
+terms of the average of the systolic and diastolic pressures.
+Similarly, dynamics much slower than observable within
+the considered time scale (i.e., months) are disregarded,
+i.e., the corresponding variables are taken as constants.
+In 1970’s several attempts have been made to model
+various aspects of the cardiovascular/kidney system.
+3,6,27
+However, these will not be considered in this paper, since
+they do not introduce any novelty to Guyton’s model as far
+as the renal sympathetic nerve activity is concerned.
+In the subsequent years Uttamsingh has developed a
+detailed mathematical model of the long-term renal system
+dynamics
+40 also including some basic cardiovascular dy-
+namics. The main novelty in Uttamsingh’s model 40 is the
+dependence of renin secretion on the macula densa sodium
+ﬂow.
+A later and more extensive contribution to renal sys-
+tem models is the one by Coleman
+7 which focuses on the
+sodium ﬂow in the macula densa, and provides a detailed
+representation of the renin secretion and tubulo-glomerular
+feedback mechanisms (Fig. 1). It also includes the effect of
+angiotensin on the tubulo-glomerular feedback signal.
+Table 1 shows a qualitative comparison of the causal
+relations between some variables and renal processes as
+used by various models.
+PROPOSED MODEL
+The objective of this study is to develop a computer-
+based model of the long-term cardiovascular system re-
+sponse to increased renal sympathetic nerve activity and to
+inhibition of renal sympathetic nerve activity. The model
+combines major parts of Guyton’s extensive cardiovascular
+model with two renal models in the literature (Coleman’s
+and Uttamsingh’s models ) and improves them with some
+further experimental ﬁndings from the literature, such that
+the simulation results sufﬁciently resemble the behavior of
+the arterial pressure and sodium excretion under long-term
+rsna increase and under volume loading/rsna inhibition.
+Short-term dynamics are not considered in this model.
+Guyton’s models
+20,22 provide a very good and extensive
+basis for any long-term model of the human cardiovascular
+system. However, keeping the aim of accounting for the
+renal sympathetic effects in mind, the model presented in
+Guyton et al.
+22 needs to be improved, because it represents
+the renal tubular system as a single block and is therefore
+not suitable for analyzing the inﬂuence of renal sympathetic
+nerve activity at different parts of this system. In Guyton’s
+model,
+22 the effect of the renal nerve on kidney functions is
+conﬁned to the inﬂuence on the afferent arteriolar resistance
+(Table 1). However, in DiBonaet al.,12 it has been reported
+that renal nerves directly affect some activity in different
+parts of the renal tubular system: Renin secretion from the
+juxtaglomerular complex and tubular sodium reabsorption.
+The proposed model adopts the representation of the renal
+tubular system in terms of its anatomical subregions as
+given by Coleman
+7 (Fig. 1), which allows not only a de-
+tailed account for different effects of the renal sympathetic
+nerve activity (rsna) but also a detailed study of sodium re-
+absorption from different parts of the renal tubular system.
+Furthermore, some hormonal effects represented in
+closed form in Guyton’s model have been replaced by more
+detailed representations in Uttamsingh et al.
+40
+Thus, based on medical knowledge, the proposed model
+integrates to Guyton’s models for the human cardiovascular
+system20,22 the above mentioned physiological functions as
+represented in Coleman’s and Uttamsingh’s kidney mod-
+els and some quantitative ﬁndings from medical literature.
+These quantitative ﬁndings include:
+• Dependence of right atrial pressure on atrial natriuretic
+peptide31
+FIGURE 1. Renal tubular system as modeled by (a) Guyton and (b) Coleman.
+
+=== PAGE 3 ===
+Long-Term Mathematical Model Involving RSNA 1609
+TABLE 1. Comparison of different models in the literature with respect to some renal mechanisms.
+Guyton’s model Uttamsingh’s model Coleman’s model
+(Guyton, 1972) (Uttamsingh, 1985) (Coleman, 1992) Proposed model
+Factor(s) inﬂuencing — • Macula densa sodium • Macula densa sodium • Macula densa sodium ﬂow
+renin secretion ﬂow ﬂow nerve
+• Renal sympathetic activity
+Factor(s) inﬂuencing • Sodium concentration • Renin concentration • Renin concentration • Renin concentration
+angiotensin secretion • Renal blood ﬂow
+Factor(s) inﬂuencing • Potassium concentration • Angiotensin concentration • Angiotensin • Potassium
+aldosterone secretion • Sodium concentration concentration • Sodium concentration
+• Angiotensin concentration • Angiotensin concentration
+• Arterial pressure • Arterial pressure
+Factor(s) inﬂuencing • Right atrial pressure • Sodium concentration — • Right atrial pressure
+antidiuretic hormone • Sodium concentration • Excess ﬂuid in extracellular • Sodium concentration
+secretion • Autonomic nervous compartment • Autonomic nervous
+system activity system activity
+Factor(s) inﬂuencing • Natriuretic factora —— • Right atrial pressure
+atrial natriuretic
+peptide secretion
+Variable(s) affected • Afferent arteriolar — — • Afferent arteriolar resistance
+by renal sympathetic resistance • Renin secretion rate
+nerve activity • Tubular sodium reabsorption
+rate
+a In 1970s although the existence of natriuretic peptide regulation was recognized,27 the detailed regulation mechanism was not known yet.
+Therefore, Guyton has used a hypothetical regulation loop, which he called “natriuretic factor.”
+• Effect of atrial natriuretic peptide on sodium excretion25
+• Dependence of rsna on right atrial pressure11 and arterial
+pressure10
+• Effects of rnsa on the renin secretion rate8 and the tubular
+sodium reabsorption rate8,35
+• Data on sodium excretion and renin concentration36,39
+• Since sodium ﬂow in macula densa and renin secretion
+rate do not lend themselves to practical measurement,
+some assumptions have been made in order to estimate
+them from measurable variables reported in the data
+given in.
+36,39 These assumptions are as follows:
+(i) It has been assumed that the changes in the sodium
+ﬂow in macula densa is similar to the changes in
+sodium excretion in urine, with some modulation
+by the distal tubule and collecting duct sodium re-
+absorption rate. Anatomically, after macula densa,
+sodium goes through the distal tubule and the col-
+lecting duct [Fig. 1(b)], where some part of it is re-
+absorbed, and then leaves the body in the urine. This
+assumption is actually a consequence of a more ba-
+sic assumption that both the distal tubule sodium
+reabsorption rate and the collecting duct sodium
+reabsorption rate are constant percentages of the re-
+spective inﬂows. The assumption on the fractional
+distal tubule sodium reabsorption rate is justiﬁed
+by the experimental ﬁndings of Barba et al.,
+1 who
+report an increase of only 3% (small enough to
+be assumed as 0%) in the fractional distal tubule
+sodium reabsorption as a response to dropping the
+sodium intake down to 62.5% of its normal value.
+On the other hand, the assumption on the fractional
+collecting duct sodium reabsorption rate is based
+on the following argumentation of Mejia et al.
+34
+“because of relatively small amount of NaCl reab-
+sorbed in the collecting duct system, control mech-
+anisms at this site can only mediate relatively small
+changes the NaCl excretion rate.”
+(ii) It has been assumed that at steady state the percent-
+age change in the renin secretion is proportional to
+renin concentration change in the blood. The justi-
+ﬁcation of this assumption is based on the fact that
+at steady-state renin secretion and destruction rates
+are equal. Consequently, a percentage change in
+steady-state renin secretion can be said to cause the
+same percentage change in the steady-state renin
+concentration.
+(iii) It has been assumed that renin is secreted only from
+the kidneys according to.
+24
+All basic assumptions in the proposed model, including
+those mentioned above, can be listed as follows:
+• The kidneys are modeled as if they constitute a single
+huge nephron.
+• It is assumed that the change in sodium ﬂow in macula
+densa is similar to the change in sodium excretion in
+urine, with some modulation by the distal tubule and
+collecting duct sodium reabsorption rate.
+
+=== PAGE 4 ===
+1610 K ARAASLAN et al.
+• It is assumed that at steady state the percentage change
+in the renin secretion is proportional to the percentage
+change in renin concentration.
+• It is assumed that renin is secreted only from the kidneys.
+• It is assumed that the direct inﬂuence of renal nerves on
+tubular sodium reabsorption is conﬁned to the proximal
+tubule.
+• It is assumed that there is no baroreceptor mediated rsna
+adaptation.
+• It is assumed that baroreceptor mechanism has no inﬂu-
+ence on renin secretion.
+• The effect of potassium concentration on aldosterone
+secretion is assumed to be constant.
+• The sodium reabsorption effect of aldosterone is assumed
+to be conﬁned to distal tubule.
+Throughout the model the hormone regulation mecha-
+nisms have been represented in accordance with Guyton’s
+approach. This approach is based on a simpliﬁed model,
+which relates the hormone concentration to the hormone
+secretion level. Since at the steady-state the same amount
+of hormone is destroyed as is secreted, a percentage change
+in the hormone secretion will result in the same percentage
+change in the steady-state value of the hormone concen-
+tration. This steady-state concentration will obviously be
+reached with a certain time delay. This behavior can be
+approximated by an exponential convergence with a spe-
+ciﬁc time constant T, which corresponds to the time delay
+for the concentration to reach approximately 63% of the
+steady-state level.
+From control theory point of view, this exponential con-
+vergence of the percentage change in hormone concen-
+tration (x) to the percentage change in hormone secretion
+level (x
+s) can easily be represented by a ﬁrst order differ-
+ential equation dx
+dt = 1
+T (xs − x). Instead of the differential
+equation, the above relation is used in the integral form in
+the simulations.
+x(t) = 1
+T
+t∫
+0
+(xs − x)dτ (1)
+Figure 2 shows the block diagram of the proposed model.
+Each block represents the dependence of a physical or
+FIGURE 2. The block diagram of the basic physiological mechanisms involved in blood volume regulation. Each block expresses
+the dependence of a physical or physiological variable on other variables. Continuous and dotted arrows are used to represent the
+stimulating and inhibiting effects, respectively.
+
+=== PAGE 5 ===
+Long-Term Mathematical Model Involving RSNA 1611
+physiological variable on other physical or physiological
+variables. These blocks are brieﬂy explained below. The
+mathematical relations are given in the respective equa-
+tions. The normal steady-state values of the variables are
+given in the glossary of terms (Table 2). Blocks 1, 7, 11,
+32, and 35 include novel representations or mechanisms,
+which are not present in the previous models
+Block 1 : Renal nerves from brain to kidneys (efferent
+renal nerves) are primarily affected by arterial pres-
+sure, cardiac pressure, and angiotensin hormone. It was
+shown that an increase in arterial pressure and right
+atrial pressure causes the renal sympathetic nerve ac-
+tivity to decrease in DiBonaet al.
+10,11 It was also shown
+that a short-term increase in the angiotensin hormone
+TABLE 2. Glossary of terms.
+Normal steady-state
+Symbol Name/Deﬁnition values/unit
+αmap Effect of mean arterial pressure on renal sympathetic nerve activity 1
+αrap Effect of right atrial pressure on renal sympathetic nerve activity 1
+βrsna Effect of renal sympathetic nerve activity on afferent arteriolar resistance 1
+δra Effect of right atrial pressure on normalized antidiuretic hormone secretion rate 0
+γat Effect of angiotensin hormone concentration on fractional proximal sodium reabsorption 1
+γﬁlsod Effect of the ﬁltered sodium load on fractional proximal sodium reabsorption 1
+γrsna Effect of renal sympathetic nerve activity on fractional proximal sodium reabsorption 1
+εaum Autonomic multiplier effect 1
+ηcd−sodreab Fractional collecting duct sodium reabsorption 0.93
+ηdt−sodreab Fractional distal tubule sodium reabsorption 0.5
+ηpt−sodreab Fractional proximal sodium reabsorption 0.8
+λanp Effect of atrial natriuretic peptide on collecting duct sodium reabsorption rate 1
+λdt Effect of distal tubule sodium outﬂow on collecting duct sodium reabsorption rate 1
+µadh Effect of antidiuretic concentration on tubular water reabsorption rate 1
+µal Effect of aldosterone concentration on tubular water reabsorption rate 1
+νmd−sod Effect of macula densa sodium ﬂow on normalized renin secretion rate 1
+νrsna Effect of renal sympathetic nerve activity on normalized renin secretion rate 1
+ξat Effect of angiotensin hormone on normalized aldosterone secretion rate 1
+ξk/sod Effect of potassium to sodium concentration ratio on normalized aldosterone secretion rate 1
+ξmap Effect of mean arterial pressure on normalized aldosterone secretion rate 1
+/Sigma1tgf Tubuloglomerular feedback signal 1
+/Phi1cd−sodreab Absolute collecting duct sodium reabsorption rate 1.674 mEq/min
+/Phi1co Cardiac output 5l / m i n
+/Phi1dt−sod Distal tubule sodium outﬂow 1.8 mEq/min
+/Phi1dt−sodreab Absolute distal tubule sodium reabsorption rate 1.8 mEq/min
+/Phi1ﬁlsod Filtered sodium load 18 mEq/min
+/Phi1gﬁlt Glomerular ﬁltration rate 0.125 l/min
+/Phi1md−sod Macula densa sodium ﬂow 3.6 mEq/min
+/Phi1pt−sodreab Absolute proximal tubular sodium reabsorption rate 14.4 mEq/min
+/Phi1rb The renal blood ﬂow 1.2 l/min
+/Phi1sodin Sodium intake 0.126 mEq/min
+/Phi1t−wreab Tubular water reabsorption rate 0.124 l/min
+/Phi1u Urine ﬂow rate 0.001 l/min
+/Phi1u−sod Urine sodium ﬂow 0.126 mEq/min
+/Phi1vr Venous return 5l / m i n
+/Phi1win Water intake 0.001 l/min
+ψal Effect of aldosterone concentration on fractional distal sodium reabsorption 1
+aauto Autonomus system activity 1
+abaro Baroreceptor activity 0.75
+achemo Chemoreceptor activity 0.25
+Cadh Antidiuretic hormone concentration 4 munits/l
+Cal Aldosterone concentration 85 ng/l
+ˆCanp Normalized atrial natriuretic peptide concentration 1
+Cat Angiotensin concentration 20 ng/l
+Cgcf Glomerular capillary ﬁltration coefﬁcient 0.00781
+Ck Potassium concentration 5 mEq/l
+ˆCr Normalized renin concentration 1
+Csod Sodium concentration 144 mEq/l
+Kbar Coefﬁcient relating basic arterial resistance to vascularity 16.6 mmHg min l −1
+Kvd Vascularity destruction coefﬁcient 0.00001
+
+=== PAGE 6 ===
+1612 K ARAASLAN et al.
+TABLE 2. Continued.
+Normal steady-state
+Symbol Name/Deﬁnition values/unit
+Msod Total amount of sodium 2160 mEq
+Nadh Normalized antidiuretic hormone concentration 1
+Nals Normalized aldosterone secretion rate 1
+nε−dt Normal value of fractional distal sodium reabsorption 0.5
+nη−cd Normal value of fractional collecting duct sodium reabsorption 0.93
+nη−pt Normal value of fractional proximal sodium reabsorption 0.8
+Nal Normalized aldosterone concentration 1
+Nrs Normalized renin secretion rate 1
+Nrsna Normalized renal sympathetic nerve activity 1
+PB Bowman hydrostatic pressure 18 mmHg
+Pf Net ﬁltration pressure 16 mmHg
+Pgh Glomerular hydrostatic pressure 62 mmHg
+Pgo Glomerular osmotic pressure 28 mmHg
+Pma Mean arterial pressure 100 mmHg
+Pmf Mean ﬁlling pressure 7 mmHg
+Pra Right atrial pressure 0 mmHg
+Ra Arterial resistance 16.6 mmHg min l −1
+Raa Afferent arteriolar resistance 31.67 mmHg min l −1
+Rba Basic arterial resistance 16.6 mmHg min l −1
+Rbv Basic venous resistance 3.4 mmHg min l −1
+Rea Efferent arteriolar resistance 51.66 mmHg min l −1
+rsna Renal sympathetic nerve activity 1
+Rtp Total peripheral resistance 20 mmHg min l −1
+Rr Renal vascular resistance 83.33 mmHg min l −1
+Rvr Resistance to venous return 1.4 mmHg min l −1
+Nadhs Normalized antidiuretic hormone secretion rate 1
+Tadh Time constant for antidiuretic hormone secretion 6 min
+Tal Time constant for aldosterone hormone secretion 30 min
+Tr Time constant for renin secretion 15 min
+vas Vascularity 1
+vas
+d Vascularity destruction rate 0.00001
+vasf Vascularity formation rate 0.00001
+Vb Blood volume 5 l
+Vecf Extracellular ﬂuid volume 15 l
+concentration increases renal sympathetic nerve activ-
+ity (rsna) in DiBona et al. 9 However, Lohmeier31 has
+mentioned an indirect measurement showing that hy-
+pertension induced by long-term angiotensin infusion
+causes a decrease in rsna. Finally, in 2003 Barrettet al.
+2
+have been able to measure directly that long-term (7
+days) angiotensin infusion causes a sustained increase
+in mean arterial pressure and a sustained decrease in
+rsna. Consequently, in the proposed long-term model no
+direct effect of angiotensin hormone on rsna has been
+included.
+Rsna is modeled as the product of normalized rsna
+(N
+rsna), the effect of mean arterial pressure on rsna ( αmap)
+and the effect of right atrial pressure on rsna ( αrap). The
+relationship between mean arterial pressure and heart rate
+exhibits the typical adaptation behavior, such that the effect
+of a change in mean arterial pressure level vanishes within
+1–2 days. However, in Barrett et al. ,
+2 it is reported that
+no similar resetting has been observed in the relationship
+between mean arterial pressure and rsna (i.e., baroreﬂex
+control of rsna) within 7 days after a change in the mean
+arterial pressure has been induced. Consequently, no adap-
+tation mechanism has been included in the equation ofαmap.
+The equations forαmap andαrap have been obtained by curve
+ﬁtting from the ﬁgures given in DiBonaet al.10,11 This block
+consists of a novel representation of rsna not given in the
+considered previous cardiovascular/renal models [Eqs. (2),
+(3), and (4)].
+rsna = N
+rsna × αmap × αrap (2)
+αmap = 0.5 + 1.1
+1 + e(Pma−100 mmHg)/15 mmHg (3)
+αrap = 1 − 0.008(mmHg)−1 Pra (4)
+Block 2 : The renal vascular resistance ( Rr) is composed
+of the afferent and efferent arteriolar resistances ( Raa
+and Rea). The efferent arteriolar resistance ( Rea) has
+been modeled as a function of the angiotensin hor-
+mone concentration ( Cat), the equation for which has
+
+=== PAGE 7 ===
+Long-Term Mathematical Model Involving RSNA 1613
+been extracted from experimental data given by Guy-
+ton et al. 21 On the other hand, the afferent arteriolar
+resistance (Raa) is modeled as the product of a constant
+normal value (Raa−ss = 31.67 mmHg min l−1), the effect
+of renal sympathetic nerve activity on afferent arterio-
+lar resistance (βrsna) and the effect of tubuloglomerular
+feedback signal on afferent arteriolar resistance ( /Sigma1tgf).
+βrsna is expressed as a function of rsna. The relating
+equations have been obtained from Guyton et al.22
+Rr = Raa + Rea (5)
+Raa = Raa−ss × βrsna × /Sigma1tgf (6)
+βrsna = 1.5(rsna − 1) + 1( 7 )
+Rea = 0.9432 + 0.1363
+0.2069 + e3.108−1.785 log10 Cat
+(8)
+Block 3: The renal blood ﬂow (/Phi1rb) is obtained by dividing
+the mean arterial pressure ( Pma) by the renal vascular
+resistance ( Rr) in accordance with Guyton’s model. 22
+Here it is assumed that the mean arterial pressure
+(Pma) sufﬁciently well approximates the renal arterial
+pressure.
+/Phi1rb = Pma/Rr (9)
+Block 4 : The relations in this block are borrowed from
+Guyton et al.22 The glomerular ﬁltration rate ( /Phi1gﬁlt)i s
+expressed as the product of the net ﬁltration pressure (Pf)
+and a constant glomerular capillary ﬁltration coefﬁcient
+(Cgcf). The net ﬁltration pressure ( Pf) is obtained by
+subtracting the sum of Bowman hydrostatic pressure
+(PB) and the glomerular osmotic pressure (Pgo) from the
+glomerular hydrostatic pressure ( Pgh). The glomerular
+hydrostatic pressure (Pgh) is calculated as the difference
+of mean arterial pressure ( Pma) and the mean afferent
+arteriolar pressure, which is represented as the product
+of the renal blood ﬂow ( /Phi1
+rb) and the afferent arteriolar
+resistance (Raa). PB and Pgo were assumed constant at
+their normal steady-state values.
+/Phi1gﬁlt = Pf × Cgcf (10)
+Pf = Pgh − (PB + Pgo) (11)
+Pgh = Pma − /Phi1rb × Raa (12)
+Block 5 : The sodium ﬂow sensed at macula densa gives
+rise to a signal, which is mainly fed back to the afferent
+arteriole in order to regulate the glomerular ﬁltration
+rate. The tubuloglomerular feedback signal ( /Sigma1tgf)w a s
+modeled as a function of macula densa sodium ﬂow
+(/Phi1md−sod).26
+/Sigma1tgf = 0.3408 + 3.449
+3.88 + e(/Phi1md−sod−3.859)/(−0.9617) (13)
+Block 6 : The ﬁltered sodium load ( /Phi1ﬁlsod) represents the
+amount of sodium ﬁltered from the glomerulus to the
+proximal tubule per unit time, and can be expressed
+as the product of the glomerular ﬁltration rate ( /Phi1
+gﬁlt)
+and the sodium concentration ( Csod) as proposed by
+Coleman.7
+/Phi1ﬁlsod = /Phi1gﬁlt × Csod (14)
+Block 7: Some fraction (the so-called fractional proximal
+sodium reabsorption, ηpt−sodreab) of the ﬁltered sodium
+load (/Phi1ﬁlsod) is reabsorbed from the proximal tubule to
+the blood. Hence the absolute proximal tubular sodium
+reabsorption rate (/Phi1
+pt−sodreab) can be represented as the
+product of ﬁltered sodium load ( /Phi1ﬁlsod) and ηpt−sodreab
+[Eq. (15)]. The fractional proximal sodium reabsorp-
+tion ( ηpt−sodreab) is affected by ﬁltered sodium load, 7
+angiotensin hormone concentration ( Cat)7 and rsna.8,35
+Following Coleman’s approach, 7 the fractional proxi-
+mal sodium reabsorption (ηpt−sodreab) has been modeled
+as the product of its normal value ( nη−pt = 0.8) and
+the effects of the ﬁltered sodium load, the angiotensin
+hormone concentration and rsna on fractional proxi-
+mal sodium reabsorption, γ
+ﬁlsod, γat, and γrsna, respec-
+tively, whereγrsna is a novel contribution not present in
+Coleman’s model [Eq. (16)].
+An increase in ﬁltered sodium load ( /Phi1ﬁlsod) has a de-
+creasing inﬂuence on fractional proximal sodium reabsorp-
+tion. This effect (γﬁlsod) has been modeled by curve ﬁtting
+to the piece-wise linear representation given in7 [Eq. (17)].
+An increase in angiotensin concentration (Cat) has an in-
+creasing inﬂuence on fractional proximal sodium reabsorp-
+tion. This effect (γ
+at) has also been modeled by curve ﬁtting
+to the piece-wise linear representation given in7 [Eq. (18)].
+The results presented by Denton et al.8 and Miki et al.35
+show that an increase in rsna has a direct increasing effect
+on tubular sodium reabsorption rate. On the other hand,
+the evidence provided by Nomora et al.37 shows that rsna
+primarily affects the proximal tubule sodium reabsorption,
+hence it seems plausible to exclude the effects of rsna on
+sodium reabsorption at other parts of the renal tubular sys-
+tem. The effect of rsna on fractional proximal sodium re-
+absorption (γrsna) has been modeled by curve ﬁtting to the
+data provided in8 and35 [Eq. (19)].
+/Phi1pt−sodreab = /Phi1ﬁlsod × ηpt−sodreab (15)
+ηpt−sodreab = nη−pt × γﬁlsod × γat × γrsna (16)
+γﬁlsod = 0.8 + 0.3
+1 + e1+[(/Phi1ﬁlsod−14 mEq/ min)/(138 mEq/ min)]
+(17)
+γat = 0.95 + 0.12
+1 + e2.6−1.8 log10[(Cat)/(1 ng/l)] (18)
+
+=== PAGE 8 ===
+1614 K ARAASLAN et al.
+γrsna = 0.5 + 0.7
+1 + e(1−rsna)/2.18 (19)
+Block 8: Since the part of the ﬁltered sodium load (/Phi1ﬁlsod),
+which is not reabsorbed into the blood, goes to macula
+densa, the macula densa sodium ﬂow (/Phi1md−sod) is calcu-
+lated as the difference of the ﬁltered sodium load (/Phi1ﬁlsod)
+and the absolute proximal tubule sodium reabsorption
+rate (/Phi1pt−sodreab).
+/Phi1md−sod = /Phi1ﬁlsod − /Phi1pt−sodreab (20)
+Block 9 : Some fraction ( ηdt−sodreab) of the macula densa
+sodium ﬂow (/Phi1md−sod) is reabsorbed into the blood at
+the distal tubule. Thus, the absolute distal tubule sodium
+reabsorption rate ( /Phi1
+dt−sodreab) can be expressed as the
+product of the macula densa sodium ﬂow ( /Phi1md−sod)
+and the so-called fractional distal tubule sodium reab-
+sorption (η
+dt−sodreab). The fractional distal tubule sodium
+reabsorption (ηdt−sodreab) is affected by aldosterone hor-
+mone concentration. 7 The fractional distal sodium re-
+absorption ( ηdt−sodreab) is represented as the product
+of its normal value ( nε−dt = 0.5) and the effect of al-
+dosterone hormone concentration on fractional distal
+sodium reabsorption ( ψ
+al). The piece-wise linear rela-
+tionship given by Uttamsingh et al.40 has been modiﬁed
+to representψ al as a function of the aldosterone hormone
+concentration (Cal).
+/Phi1dt−sodreab = /Phi1md−sod × ηdt−sodreab (21)
+ηdt−sodreab = nε−dt × ψal (22)
+ψal = 0.17 + 0.94
+1 + e[0.48−1.2 log10(Cal/(1 ng/l))]/0.88
+(23)
+Block 10 : The distal tubule sodium outﬂow ( /Phi1dt−sod)i s
+calculated as the difference of macula densa sodium ﬂow
+(/Phi1md−sod) and absolute distal tubule sodium reabsorption
+rate (/Phi1dt−sodreab).
+/Phi1dt−sod = /Phi1md−sod − /Phi1dt−sodreab (24)
+Block 11: At the collecting duct some fraction (ηcd−sodreab)
+of the sodium contained in the ﬂow is reabsorbed into the
+blood. Hence, in accordance with,7 the absolute collect-
+ing duct sodium reabsorption rate ( /Phi1cd−sodreab) is mod-
+eled as the product of the distal tubule sodium outﬂow
+(/Phi1dt−sod) and so-called fractional collecting duct sodium
+reabsorption (ηcd−sodreab). The fractional collecting duct
+sodium reabsorption (ηcd−sodreab) can be represented as
+the product of its normal value ( nη−cd = 0.93) and the
+effects of distal tubule sodium outﬂow ( /Phi1dt−sod) and
+atrial natriuretic peptide hormone concentration ( ˆCanp)
+on fractional collecting duct sodium reabsorption, λdt
+(adapted from Coleman et al.7) and λanp (derived from
+Huang et al. 25), respectively. The effect of atrial na-
+triuretic peptide hormone concentration is particularly
+dominant at collecting duct of renal tubular system; 19
+hence, this effect has not been considered at other parts
+of the renal tubular system. This block includes a novel
+representation of the effect of atrial natriuretic peptide
+on sodium excretion not present in previous models
+[Eqs. (26) and (28)].
+/Phi1
+cd−sodreab = /Phi1dt−sod × ηcd−sodreab (25)
+ηcd−sodreab = nη−cd × λdt × λanp (26)
+λdt = 0.82 + 0.39
+1 + e(/Phi1dt−sod−1.6m E q/ min)/2m E q/ min
+(27)
+λanp =− 0.1 × ˆCanp + 1.1199 (28)
+Block 12: Sodium remaining in the collecting duct consti-
+tutes the urine sodium ﬂow ( /Phi1u−sod), which can be ex-
+pressed as the difference of the distal tubule sodium out-
+ﬂow (/Phi1dt−sod) and the absolute collecting duct sodium
+reabsorption rate (/Phi1cd−sodreab).
+/Phi1u−sod = /Phi1dt−sod − /Phi1cd−sodreab (29)
+Block 13 : Although the water intake of a person can be
+considered as a voluntary act, hence an independent
+variable, there are many physiological factors that affect
+the level of thirst. Guyton points out the parallelism be-
+tween antidiuretic hormone secretion and various stimuli
+known to affect thirst (e.g., high sodium concentration
+and hypovolemia, both of which have thirst-inducing
+effects, are accompanied by high antidiuretic hormone
+secretion).
+22 In the proposed model Guyton’s approach
+is used and water intake (/Phi1win) is represented as a func-
+tion of antidiuretic hormone concentration (Cadh).
+/Phi1win = 0.008 l/ min
+1 + 1.822
+(
+Cadh
+1 milliunits/l
+)−1.607 − 0.0053 l/ min
+(30)
+Block 14: The extracellular ﬂuid volume ( Vecf), being the
+accumulation of net ﬂuid intake rate, is calculated as the
+time integral of the difference between the water intake
+(/Phi1win) and the urine output rate ( /Phi1u), as proposed by
+Guyton.20 In the simulations the initial condition (IC)
+has been taken equal to the normal value of 15 l.
+Vecf(t) = IC +
+t∫
+0
+(/Phi1win − /Phi1u)dτ, IC = 15 l (31)
+
+=== PAGE 9 ===
+Long-Term Mathematical Model Involving RSNA 1615
+Block 15 : Based on Guyton’s model, 20 the blood volume
+(Vb) is represented as a function of extracellular ﬂuid
+volume (Vecf).
+Vb = 4.560227 l+ 2.431217 l
+1 + e−(Vecf−18.11278 l)×(0.47437 l−1) (32)
+Block 16: Since the blood pressure is non-uniform within
+the circulatory system, an average variable needs to be
+deﬁned. Therefore, Guyton deﬁnes mean ﬁlling pressure
+(P
+mf) as “the average of all pressures in all individ-
+ual segments of the systemic circulation when each of
+these pressures is weighted in proportion to the com-
+pliance to the compliance of the respective segment.”
+20
+He indicates that “it can be measured by stopping the
+circulation and rapidly pumping blood from arteries to
+the veins,” thus bringing the pressures in the two major
+compliance areas of the systemic circulation into equi-
+librium within a few seconds.
+20 The average compliance
+of all systemic circulation segments is affected by the
+autonomous nervous system. Thus, mean ﬁlling pressure
+(Pmf) is expressed as a function of blood volume ( Vb)
+and the autonomic multiplier effect (εaum).
+Pmf = (7.436 mmHg/l × Vb − 30.18 mmHg)× εaum
+(33)
+Block 17 : The venous return ( /Phi1vr), which is blood ﬂow
+into the heart, can be calculated dividing the difference
+between mean ﬁlling pressure (P
+mf) and right atrial pres-
+sure (Pra) by the resistance to venous return (Rvr).20
+/Phi1vr = Pmf − Pra
+Rvr
+(34)
+Block 18: At steady state, the input to and the output from
+the heart must be equal. 23 Hence, cardiac output ( /Phi1co)
+is taken equal to venous return (/Phi1vr).
+Block 19: The right atrial pressure ( Pra) is calculated as a
+function of the cardiac output (/Phi1co) in accordance with
+the Frank-Starling Law.20
+Pra = 0.2787 mmHg× e/Phi1co×(0.2281 min /l) (35)
+Block 20: Vascularity gives an average measure of the num-
+ber and diameter of blood vessels in the body. When
+there is excess blood ﬂow in the circulatory system
+lasting for long periods of time, the number of tissue
+vessels and their diameters slowly increase to accom-
+modate the extra ﬂow. Similarly, when there is too lit-
+tle ﬂow, “vascularity” of the tissues decreases slowly.
+This long-term auto-regulation of the blood vessels is
+accounted for by expressing the vascularity (vas) as the
+time integral of the net vascularity increase rate, which is
+the difference between vascularity formation rate (vas
+f)
+and vascularity destruction rate (vas d). The vascularity
+destruction rate (vasd) can be taken as a constant frac-
+tion Kvd = 0.00001 (the numerical value of the related
+parameter k2 in Figs. 11-5, p. 184 in Ref.20 has been ob-
+tained via personal communication with Guyton, A.C) of
+the existing vascularity, while the vascularity formation
+rate (vasf) can be expressed as a function of the cardiac
+output (/Phi1co).20
+vas(t) = IC +
+t∫
+0
+(vasf − vasd)dτ, IC = 1 (36)
+vasf = 11.312 × e−/Phi1co×(0.4799 min /L)
+100000 (37)
+vasd = vas × Kvd (38)
+Block 21 : The arterial resistance ( Ra) is modeled as the
+basic arterial resistance ( Rba) modiﬁed by the effect
+of autonomous nervous system (autonomic multiplier
+effect, εaum), where the basic arterial resistance ( Rba)
+is inversely proportional to vascularity (vas) 20 with a
+constant of proportionality Kbar = 16.6 mmHg min l−
+00001 (the numerical value of the related parameter k1
+in Figs. 11-5, p. 184 in Ref. 20 has been obtained via
+personal communication with Guyton, A.C).
+Ra = Rba × εaum (39)
+Rba = Kbar/vas (40)
+Block 22: The resistance to venous return is deﬁned as “the
+average resistance from each segment of the systemic
+circulation to the right atrium when each of these resis-
+tances is weighted in proportion to the compliance of
+the respective segment.”16 The empirical formula bor-
+rowed from Guyton’s model20 expresses the resistance
+to venous return ( Rvr) as a function of a constant basic
+venous resistance (Rbv) and the arterial resistance (Ra).
+Rvr = (8 Rbv + Ra)/31 (41)
+Block 23: The total peripheral resistance (Rtp) is calculated
+as the sum of arterial resistance ( Ra) and constant basic
+venous resistance (Rbv).20
+Rtp = Ra + Rbv (42)
+Block 24 : Since the ﬂuctuation between systolic and di-
+astolic pressures is ignorable from the perspective of
+long-term cardiovascular dynamics, it is reasonable to
+use their mean, i.e., mean arterial pressure. The mean
+arterial pressure ( P
+ma) is calculated as the product of
+cardiac output (/Phi1co) and the total peripheral resistance
+(Rtp). Angiotensin has a strong direct vasoconstrictor ef-
+fect, which persists only for 1 or 2 min, while its indirect
+inﬂuence of increasing sodium and water reabsorption
+
+=== PAGE 10 ===
+1616 K ARAASLAN et al.
+from the kidneys becomes much more dominant in the
+long term.19 Consequently, in this long-term model only
+the indirect inﬂuence of angiotensin has been included.
+Pma = /Phi1co × Rtp (43)
+Block 25 : Guyton et al. 20 have represented the effect of
+the autonomous nervous system on various variables in
+terms of a normalized variable, the autonomic multiplier
+effect (ε
+aum). The autonomic multiplier effect ( εaum)i s
+composed of chemoreceptor ( achemo) and baroreceptor (
+abaro) activities, which are functions of the mean arterial
+pressure (Pma) (expressed via an intermediate variable
+aauto). As opposed to the chemoreceptor activity, the
+baroreceptor activity (a baro) exhibits an adaptation be-
+havior accounted for by the integral equation, where the
+factor 0.0000667 min
+−1 is the inverse of the adaptation
+time constant.
+εaum = achemo + abaro (44)
+aauto = 3.079 e− Pma×0.011 mmHg−1
+(45)
+achemo = 1/4aauto (46)
+abaro(t) = 3/4
+{
+aauto − (0.0000667
+−1
+min)
+×
+
+
+t∫
+0
+(abaro − 1) dτ
+
+
+}
+(47)
+Block 26 : The antidiuretic hormone concentration ( Cadh)
+can be expressed as the product of the normalized antid-
+iuretic hormone concentration ( Nadh) and normal value
+of antidiuretic hormone concentration (4 milli-units/l)
+[Eq. (48)].
+Equation (49) accounts for the regulation mechanism, by
+which the normalized antidiuretic hormone concentration
+(N
+adh) is regulated to a normalized antidiuretic hormone
+secretion rate (Nadhs). Here the time constant Tadh is taken
+as 6 min16 and the initial condition ( IC) as equal to the
+normal value = 1.
+As indicated in18 and used in,22 the antidiuretic hormone
+secretion rate is mainly determined by the sodium concen-
+tration ( Csod), the autonomic multiplier effect ( εaum) and
+the effect of right atrial pressure (δra) in an additive manner
+Eq. (50)]. SinceCsod contributes to the antidiuretic hormone
+secretion rate from a certain concentration level (taken as
+141 mEq/l) onwards (when sodium concentration is slightly
+below and above than its normal value, antidiuretic hor-
+mone is secreted), in this block C
+sod has been limited to
+values above this level. This lower bound corresponds to
+a value 3 mEq/l below the normal sodium concentration
+of 144 mEq/l, where 3 mEq/l is a value borrowed from.
+22
+Similarly, since blood volume decrease below its normal
+value, hence arterial pressure decrease and consequently
+increase of εaum above its normal value 1 contributes to the
+antidiuretic hormone secretion rate, in this block εaum has
+been limited to values above 1.
+The effect of right atrial pressure ( δra) is not a simple
+function of the right atrial pressure ( Pra) but also involves
+a self adaptation mechanism accounted for in Eq. (51) and
+borrowed from.
+22
+Cadh = 4 milli− units/l × Nadh (48)
+Nadh(t) = 1
+Tadh
+t∫
+0
+(Nadhs − Nadh)dτ+ IC, IC = 1
+(49)
+Nadhs =
+[(Csod − 141 mEq/l)
+1m E q/l + (εaum − 1) − δra
+]
+/3
+(50)
+δra(t) = (0.2 mmHg−1)Pra − (0.0007
+−1
+min)
+
+
+t∫
+0
+δra dτ
+
+
+(51)
+Block 27: In this block the tubular water reabsorption rate
+(/Phi1t−wreab) is calculated in terms of the effects of aldos-
+terone concentration and antidiuretic hormone concen-
+tration (µal and µadh) and the glomerular ﬁltration rate
+(/Phi1gﬁlt) as proposed by Guyton.22 However, the relations
+for µal and µadh have been derived from Uttamsingh’s
+model.40
+/Phi1t−wreab = 0.025 l/ min − 0.001 l/ min
+µal × µadh
++ 0.8/Phi1gﬁlt
+(52)
+µal = 0.17 + 0.94
+1 + e[0.48−1.2 log10(Cal/(1 ng/l))]/0.88
+(53)
+µadh = 0.37 + 0.8
+1 + e0.6−3.7 log10(Cadh/(1 mEq/l)) (54)
+Block 28 : The urine ﬂow rate ( /Phi1u) is calculated as the
+difference between the glomerular ﬁltration rate (/Phi1gﬁlt)
+and the tubular water reabsorption rate ( /Phi1t−wreab). In
+the simulations, /Phi1u has been conﬁned to values above
+0.0003 l/min as used in Guyton’s model.22 Such a lower
+bound for the urine ﬂow rate has been included in order
+to guarantee the excretion of the daily “minimum oblig-
+atory urine volume” (∼0.5 l/day) needed for getting rid
+of the waste products of the metabolism as indicated
+in.
+19
+/Phi1u = /Phi1gﬁlt − /Phi1t−wreab (55)
+
+=== PAGE 11 ===
+Long-Term Mathematical Model Involving RSNA 1617
+Block 29: The sodium intake (/Phi1sodin) has been taken as an
+independent variable with a normal steady-state value of
+0.126 mEq/min.
+Block 30: The total amount of sodium (M
+sod) is represented
+as the time integral of the net sodium intake rate, i.e.,
+the difference between sodium intake (/Phi1
+sodin) and urine
+sodium ﬂow (/Phi1u−sod). The initial condition (IC) is taken
+equal to the normal value = 2160 mEq.
+Msod(t) = IC +
+t∫
+0
+(/Phi1sodin − /Phi1u−sod)dτ,
+IC = 2160 mEq (56)
+Block 31: Sodium concentration ( Csod) is expressed as the
+ratio of the total amount of sodium ( Msod) to the extra-
+cellular ﬂuid volume (Vecf).
+Csod = Msod/Vecf (57)
+Block 32: This block represents the mechanism, by which
+the normalized renin concentration ( ˆCr) is regulated to
+a normalized renin secretion rate (Nrs), in a similar way
+Guyton has represented the regulation mechanisms of
+other hormones. The factors that determine this nor-
+malized renin secretion rate (N
+rs) include macula densa
+sodium ﬂow (/Phi1md−sod), renal sympathetic nerve activity
+(rsna) and the blood pressure sensed by the baroreceptors
+at the juxtaglomerular complex.12 However, Guyton has
+observed that the baroreceptor mechanism has a negligi-
+ble direct effect on renin secretion.
+21 Hence, in the pro-
+posed model the normalized renin secretion rate (Nrs)i s
+calculated in terms of the effect of macula densa sodium
+ﬂow on normalized renin secretion rate ( ν
+md−sod) and
+effect of renal sympathetic nerve activity on normalized
+renin secretion rate ( νrsna). Tr represents the time con-
+stant for renin secretion and is taken as 15 min. 21 The
+initial condition (IC) is taken equal to the normal value,
+i.e., 1. This block includes a novel representation of the
+rsna effect on renin secretion not present in previous
+models [Eq. (61)].
+ˆCr(t) = 1
+Tr
+t∫
+0
+(Nrs − ˆCr)dτ+ IC, IC = 1 (58)
+Nrs = νmd−sod × νrsna (59)
+νmd−sod = 0.2262
++ 28.04
+11.56 + e(/Phi1md−sod−1.667 mEq/ min)/(0.6056 mEq/ min)
+(60)
+νrsna = 1.89 − 2.056
+1.358 + e(rsna−0.8667) (61)
+Block 33: The angiotensin concentration ( Cat) is assumed
+to be proportional to the normalized renin concentration
+( ˆC
+r).7
+Cat = 20 ng/l × ˆCr (62)
+Block 34: This block represents the mechanism, by which
+the normalized aldosterone concentration ( Nal)i sr e g u -
+lated to the normalized aldosterone secretion rate (Nals).
+The time constant Tal governing the regulation of al-
+dosterone concentration is taken as 60 min, as used by
+Guyton et al. 22 The normalized aldosterone secretion
+rate (Nals) is calculated in terms of the effects of potas-
+sium to sodium concentration ratio, mean arterial pres-
+sure and angiotensin concentration (ξk/sod, ξmap, andξat,
+respectively) as suggested by Guyton et al. 22 Here, in
+spite of its important contribution to aldosterone secre-
+tion, the potassium concentration C
+K has been assumed
+to remain constant at its normal level of 5 mEq/l, since
+the objective of this model is to investigate the relation-
+ship between renal sympathetic activity, arterial pres-
+sure and sodium excretion. Although no direct effect
+of mean arterial pressure on aldosterone secretion rate
+has been reported in general, Guyton indicates that a
+direct effect may exist in cases of hypotension.
+21 Based
+on this, the effect of the mean arterial pressure on al-
+dosterone secretion ( ξ
+map) has been assumed as 1 (no
+effect) for mean arterial pressures above normal, while
+for hypotension cases ( Pma < 100 mmHg) the relation
+provided by Guytonet al.22 has been adopted. The effect
+of angiotensin hormone concentration on aldosterone
+secretion rate (ξat) has been obtained by smoothing the
+piece-wise linear representation provided by Uttamsingh
+et al.40
+In the simulations aldosterone concentration ( Cal) has
+been limited to a range between 1–500 ng/l in order to
+guarantee the stability of the overall algorithm. Similarly,
+ξ
+k/sod has been conﬁned to non-negative values only.
+Aldosterone concentration (Cal) is equal to the product
+of the normalized aldosterone concentration ( Nal) and the
+normal value of aldosterone concentration (85 ng/l). The
+initial condition (IC) is taken equal to the normal value,
+i.e., 1.
+C
+al = Nal × 85 ng/l (63)
+Nal(t) = 1
+Tal
+t∫
+0
+(Nals − Nal)dτ+ IC, IC = 1 (64)
+Nals = ξk/sod × ξmap × ξat (65)
+ξk/sod = CK/Csod
+0.003525 − 9 (66)
+ξmap =
+{
+69.03 e−(0.0425 mmHg−1)×Pma if Pma ≤ 100 mmHg
+1i f Pma > 100 mmHg
+(67)
+
+=== PAGE 12 ===
+1618 K ARAASLAN et al.
+ξat = 0.4 + 2.4
+1 + e[2.82−1.5 log10(Cat/(1 ng/l))]/0.8 (68)
+Block 35: The normalized atrial natriuretic peptide concen-
+tration ( ˆCanp) is calculated as a function of the right atrial
+pressure (Pra) in accordance with Lohmeier et al.33 For
+human beings the actual value at normal conditions is
+about 36 ng/l.
+ˆCanp = 7.427 − 6.554
+1 + e(Pra−3.762 mmHg)/(1 mmHg) (69)
+Block 36: This block represents the potassium concentra-
+tion, which in this model has been assumed to remain
+constant at its normal value (Ck = 5 mEq/l).
+The curve-ﬁtting tool of Matlab has been used when
+obtaining non-linear equations from the ﬁndings in the lit-
+erature represented in terms of piecewise linear equations
+or in graphical form.
+The proposed cardiovascular system model has been im-
+plemented using Matlab/Simulink. Runge Kutta 4 numeri-
+cal method with ﬁxed step size of 10 min has been used to
+solve the nonlinear differential equations in the model.
+Results of the sensitivity analysis performed by chang-
+ing nine parameters one at a time by±10% of their nominal
+values are summarized in Table 3. The resulting changes
+in the steady-state values of the 15 physiological variables
+are in general relatively small compared to the ±10% pa-
+rameter change. The largest parameter sensitivity (10.9%)
+is observed in the renal blood ﬂood as a response to a
+−10% change in the steady-state efferent arteriolar resis-
+tance, while all other changes remain below 10% in mag-
+nitude. Thus it can be said that the proposed model is quite
+robust with respect to parameter changes.
+RESULTS AND DISCUSSION
+Due to various reasons the evaluation of the validity of
+the proposed overall model is a non-trivial issue. The model
+consists of blocks, which are based on open-loop experi-
+mental data and are put together in order to function as a
+closed-loop system. As far as comparisons to real observa-
+tions are concerned, we are conﬁned to the limited amount
+of closed-loop clinical and experimental data available in
+the literature. Due to the difﬁculty of long-term experi-
+ments, observations and measurements, also the amount of
+long-term data is rather small.
+Some clinical and experimental data in the literature are
+not given in terms of the same units. In order to provide a
+common basis for fair comparison such data have been ﬁrst
+expressed as percentages of the normal steady-state val-
+ues as given in the related publication, and then converted
+into the units used in the simulations taking the normal
+steady-state values of the model as a basis. Since in prac-
+tice physiological variables are considered as normal within
+certain ranges, the mean values of such ranges have been
+taken as normal steady-state values. Experimental results
+(represented by dots in Figs. 3 and 4) have been converted
+into the units used in the simulations
+Behavior Under V arying Sodium Intake
+in Healthy Subjects
+Varying sodium intake is a good method for testing
+whether of the closed-loop model of the blood volume and
+pressure regulation mechanisms work properly, because a
+change in the sodium intake can be considered as an indirect
+way of causing long-term blood volume changes. Further-
+more among all variables considered in the model, sodium
+intake is one of the few, which can be approximated as an
+independent variable.
+The publication of Feng et al.
+16 has been chosen as a
+basis of comparison, because this publication reports the
+results of a long-term experiment involving both increase
+and decrease in sodium intake. The experiment consists
+of high sodium intake (approximately by 200%) during the
+ﬁrst 5 days and low sodium intake (approximately 94%) for
+the next 5 days in healthy human subjects [Fig. 3(A)]. As
+expected, extracellular ﬂuid volume [Fig. 3(B)] and blood
+volume [Fig. 3(C)] increase during increasing of salt in-
+take. An increase in the blood volume stimulates blood
+pressure and cardiac receptors, therefore reﬂex rsna inhi-
+bition is expected
+2 [Fig. 3(D)]. As expected, an increase
+in the blood volume increases the right atrial pressure,
+and hence also the expansion of the right atrium causes
+secretion of atrial natriuretic peptide [Fig. 3(E)]. An in-
+crease in sodium intake causes the ﬁltered sodium load and
+the macula densa sodium ﬂow to increase. The increase
+in macula densa sodium ﬂow and rsna decrease cause to
+decrease the renin secretion rate, therefore renin concen-
+tration decrease [Fig. 3(F)]. The decrease of renin concen-
+tration causes a decrease in angiotensin and aldosterone
+concentrations [Fig. 3(G)]. As a result of the decrease of
+angiotensin and aldosterone concentrations, the renal tubu-
+lar sodium reabsorption decreases. In addition to this, in-
+creasing of atrial natriuretic peptide decreases the tubular
+sodium reabsorption. Consequently, the sodium excretion
+increases [Fig. 3(H)] during sodium loading [Fig. 3(A)].
+Hence, in the long run the difference between sodium intake
+and sodium urine goes to zero [Fig. 3(I)] and the sodium
+balance is established. The model also predicts that the
+difference between water intake and urine volume will go
+to zero [Fig. 3(J)] establishing the water balance. The in-
+crease in sodium intake increases the antidiuretic hormone
+concentration, as expected. During the subsequent 5 days of
+sodium intake reduction compensatory mechanisms work
+in the opposite direction.
+All together, the cooperation of several control mech-
+anisms results in a relatively small change in the sodium
+concentration [Fig. 3(L)], in spite of the large variation in
+sodium intake.
+
+=== PAGE 13 ===
+Long-Term Mathematical Model Involving RSNA 1619
+TABLE 3. Sensitivity analysis of proposed model showing the percentage change of the steady-state value of each variable due
+to a +10% (upper) and − 10% (lower) change of a parameter.
+Output variables,
+the steady-state
+percentage change of Parameters changed by ±10% of their nominal values (one at a time)
+the steady-state values
+of which are observed Nrsna Rea Raa−ss PB Pgo Cgcf Kvd Kbar Rbv
+Mean arterial 2 .6 −1.61 .61 .32 .1 −1.10 .05 0 .20 .05
+pressure −2.91 .8 −1.8 −1.3 −2.11 .3 −0.05 −0.3 −0.06
+Glomerular 0 .40 .3 −0.3 −0.2 −0.40 .20 .02 0 .09 0 .02
+ﬁltration rate −0.43 −0.30 .30 .20 .4 −0.2 −0.02 −0.1 −0.02
+Renin 3 .6 −0.90 .20 .20 .1 −0.6 −0.6 −2.5 −0.6
+concentration −5.30 .2 −1 −0.8 −1.20 .20 .63 .60 .6
+Extracellular 0 .88 −0.50 .50 .40 .6 −0.3 −0.1 −0.8 −0.3
+ﬂuid volume −0.98 0 .6 −0.6 −0.4 −0.70 .40 .10 .90 .3
+Urinary sodium 0 .1 −0.06 0 .06 0 .05 0 .08 −0.04 0 .1 −0.2 −0.05
+ﬂow −0.12 0 .07 −0.07 −0.05 −0.08 0 .05 −0.10 .20 .05
+Sodium 0 .08 0 .06 −0.06 −0.04 −0.07 0 .04 0 .003 0 .02 0 .004
+concentration −0.08 −0.06 0 .07 0 .05 0 .08 −0.04 −0.003 −0.02 −0.005
+Total sodium 0 .96 −0.40 .40 .30 .6 −0.3 −0.1 −0.8 −0.3
+amount −10 .5 −0.5 −0.4 −0.60 .30 .10 .90 .3
+Arterial 0 .2 −0.10 .10 .10 .1 −0.11 .17 .5 −0.4
+resistance −0.27 0 .1 −0.1 −0.1 −0.20 .1 −1.1 −7.80 .4
+Cardiac output 2 .5 −1.51 .51 .21 .9 −1 −0.9 −5.6 −1.2
+−2.61 .7 −1.7 −1.2 −1.91 .20 .96 .61 .2
+Renal blood ﬂow −0.03 −8.9 −0.12 .84 .3 −2.20 .03 0 .10 .02
+0.11 0 .90 .1 −2.7 −4.32 .7 −0.03 −0.1 −0.03
+Afferent 7 4 .74 .8 −3.8 −5.83 .20 .10 .50 .1
+arteriolar −7.7 −5.2 −5.23 .96 .2 −3.7 −0.1 −0.6 −0.1
+resistance
+Renal vascular 2 .78 1 .8 −1.4 −2.11 .10 .02 0 .10 .02
+resistance −3 −8.2 −1.91 .42 .2 −1.3 −0.02 −0.1 −0.03
+Absolute 0 .77 0 .3 −0.4 −0.3 −0.50 .2 −0.01 −0.06 −0.01
+proximal −0.9 −0.40 .40 .30 .4 −0.30 .02 0 .08 0 .01
+tubular
+sodium
+reabsorption
+rate
+Absolute distal −0.70 .9 −0.4 −0.4 −0.50 .60 .10 .60 .1
+tubule sodium 1 .7 −0.51 0 .71 .2 −0.4 −0.1 −0.9 −0.1
+reabsorption
+rate
+Absolute −0.49 0 .2 −0.3 −0.2 −0.30 .10 .21 0 .2
+collecting duct 0 .5 −0.30 .30 .20 .3 −0.2 −0.2 −1.3 −0.2
+sodium
+reabsorption
+rate
+Note. Nrsna: Normalized renal sympathetic nerve activity;Rea: Steady-state value of efferent arteriolar resistance;Raa−ss: Steady-state value
+of afferent arteriolar resistance; PB: Bowman hydrostatic pressure; Pgo: Glomerular osmotic pressure; Cgcf: Glomerular capillary ﬁltration
+coefﬁcient; Kvd: Vascularity destruction coefﬁcient; Kbar: Coefﬁcient relating basic arterial resistance to vascularity; Rbv: Basic venous
+resistance.
+Another publication, which has been used to check the
+closed-loop performance of the proposed model in healthy
+humans, is by Barba et al.
+1 The experiment presented in
+this publication consists of a 3 days decrease of sodium
+intake (approximately by 62.5%) [Fig. 4(A)]. The variables
+reported in this publication include mean arterial pressure
+[Fig. 4(C)], glomerular ﬁltration rate [Fig. 4(E)], abso-
+lute proximal sodium reabsorption [Fig. 4(N)], fractional
+proximal sodium reabsorption [Fig. 4(M)], absolute dis-
+tal sodium reabsorption rate [Fig. 4(P)], fractional distal
+
+=== PAGE 14 ===
+1620 K ARAASLAN et al.
+sodium reabsorption [Fig. 4(O)] and sodium concentration
+[Fig. 4(R)]. The simulation results are superposed on the re-
+spective Figs. as solid lines. Furthermore; rsna [Fig. 4(B)],
+macula densa sodium ﬂow [Fig. 4(F)], tubulo-glomerular
+feedback signal [Fig. 4(N)], afferent arteriolar resistance
+[Fig. 4(J)], renin concentration [Fig. 4(H)], angiotensin
+FIGURE 3. Results of the simulation of the experiment pre-
+sented in Feng et al.14 with 5 days of sodium loading of 200%
+and 5 days of sodium depletion of 94%. Simulation results are
+represented by solid lines , while experimental data scaled to
+match the steady-state values of the respective variables as
+used in the simulations are shown by
+dots.
+ FIGURE 3. Continued.
+
+=== PAGE 15 ===
+Long-Term Mathematical Model Involving RSNA 1621
+FIGURE 3. Continued.
+FIGURE 3. Continued.
+concentration [Fig. 4(I)], efferent arteriolar resistance
+[Fig. 4(K)], glomerular hydrostatic pressure [Fig. 4(P)] and
+renal blood ﬂow [Fig. 4(L)] as obtained from the simula-
+tions are also given, although Barba et al. 1 do not report
+the outcomes of these variables. These results demonstrate
+that the model exhibits the following expected behaviors:
+(i) Decrease in sodium intake reduces the extracellular
+ﬂuid volume and consequently also the mean arterial
+pressure.
+(ii) Decrease in mean arterial pressure increases rsna.
+(iii) Increase in rsna contributes to the increase of renin
+secretion and tubular sodium reabsorption.
+(iv) Decrease in mean arterial pressure also reduces the
+glomerular ﬁltration rate.
+(v) Decrease in the glomerular ﬁltration rate reduces the
+macula densa sodium ﬂow.
+(vi) Decrease in the macula densa sodium ﬂow reduces
+the tubulo-glomerular feedback signal.
+(vii) Decrease in the tubulo-glomerular feedback signal
+reduces the afferent arteriolar resistance (vasodilata-
+tion of the afferent arteriole).
+(viii) The regulating effect of the decreasing afferent
+arteriolar resistance causes a smaller decrease in
+the glomerular hydrostatic pressure than would be
+otherwise.
+(ix) Consequently, also the glomerular ﬁltration rate de-
+creases less than it would do without the regulating
+effect of the decreasing afferent arteriolar resistance.
+(x) Decrease in the macula densa sodium ﬂow causes an
+increase in the renin concentration and consequently
+an increase in the angiotensin concentration.
+(xi) Increase in the angiotensin concentration causes an
+increase in the efferent arteriolar resistance (vaso-
+construction).
+(xii) The regulating effect of the increasing efferent ar-
+teriolar resistance causes a smaller decrease in the
+glomerular hydrostatic pressure than would be oth-
+erwise.
+
+=== PAGE 16 ===
+1622 K ARAASLAN et al.
+(xiii) Increase in the angiotensin concentration causes an
+increase in the fractional proximal sodium reabsorp-
+tion, and consequently also an increase in the abso-
+lute proximal sodium reabsorption.
+(xiv) Increase in the angiotensin concentration also causes
+an increase in the fractional distal sodium reabsorp-
+tion by increasing the aldosterone concentration.
+FIGURE 4. Results of the simulation of the experiment pre-
+sented in Barba et al.1 with 3 days of sodium intake reduction
+of 62.5%. Simulation results are represented by solid lines ,
+while experimental data scaled to match the steady-state val-
+ues of the respective variables as used in the simulations are
+shown by
+dots.
+ FIGURE 4. Continued.
+
+=== PAGE 17 ===
+Long-Term Mathematical Model Involving RSNA 1623
+FIGURE 4. Continued.
+FIGURE 4. Continued.
+
+=== PAGE 18 ===
+1624 K ARAASLAN et al.
+FIGURE 4. Continued.
+(xv) Increase in the fractional distal sodium reabsorption
+reduces the absolute distal sodium reabsorption.
+(xvi) All these feedback effects regulate the sodium con-
+centration such that it drops only slightly as a re-
+sponse to a large decrease in the sodium intake.
+Behavior Under Increased RSNA
+Hypertension, congestive heart failure, nephrotic syn-
+drome and cirrhosis are known to involve an increased
+basal rsna.
+12 Various sources in the literature report that
+a short-term increase in rsna gives rise to an increase in
+renin secretion and tubular sodium reabsorption.8,12,35 But
+there are very few publications on the effects of long-term
+increase in rsna on kidney functions.
+One of them is a direct animal experiment, which has
+shown that a long-term (chronical) increase in rsna causes
+sustained elevation in arterial pressure.
+29
+Another publication 38 reports about an attempt to ap-
+proximate chronic rsna stimulation by norepinephrine in-
+fusion (norepinephrine is used as an indirect index of rsna)
+into the renal artery of dogs. This experiment has resulted
+in a short-term decrease in glomerular ﬁltration rate, renal
+blood ﬂow, sodium excretion followed by a return to control
+values; however, arterial pressure and plasma renin activity
+have remained at an increased level during 7 days.
+Additionally, in Braith et al.
+4 increases in blood vol-
+ume and in the concentrations of renin, angiotensin, aldos-
+terone, and atrial natriuretic peptide are reported for heart
+transplantation cases (cardiac denervation). This behavior
+is explained as follows in Braith et al.
+5 “Cardiorenal reﬂex
+mechanism of volume regulation is abnormal in heart trans-
+plant recipients. Ablation of cardiac afferent input should
+disinhibit the cardiorenal reﬂex, increase renal nerve activ-
+ity and renal vascular resistance, reduce glomerular ﬁltra-
+tion rate and increase vasopressin, plasma renin activity,
+angiotensin II, and aldosterone. These effects should im-
+pair the ability to excrete salt and thereby increase blood
+pressure.”
+Since the above mentioned publications report the in-
+crease in rsna only in a qualitative manner, they constitute
+only a qualitative basis for checking how well the proposed
+model accounts for the effects of rsna increase [Fig. 5(A)]
+during normal sodium intake. Simulation results obtained
+by increasing rsna to a higher level exhibit convergence
+to an elevated level in mean arterial pressure [Fig. 5(B)]
+(in qualitative accordance with Kottkeet al.
+29 and Reinhart
+et al.38), blood volume [Fig. 5(F)] (in qualitative accordance
+with Braith et al. 4), atrial natriuretic peptide [Fig. 5(G)]
+(in qualitative accordance with Braith et al. 4). Although
+not measured in the aferomentioned works, an increase in
+total sodium [Fig. 5(E)] and afferent arteriolar resistance
+[Fig. 5(H)] is theoretically expected due to the increase
+in rsna. Similarly, an initial decrease in glomerular hydro-
+static pressure due to increase in afferent arteriolar resis-
+tance is expected. However, this decrease is followed by
+an increase due to the increase in blood volume. Since the
+increase in the blood volume results in an increase in the
+mean arterial pressure, the glomerular hydrostatic pressure
+increases above the control level and thus the glomerular
+hydrostatic pressure increases [Fig. 5(I)]. Glomerular ﬁltra-
+tion rate [Fig. 5(J)] (in qualitative accordance with Reinhart
+et al.
+38) ﬁrst decreases and then go to a level slightly higher
+than the control value. On the other hand, after rsna has
+been increased the concentrations of renin [Fig. 5(C)] (in
+qualitative accordance with in Reinhart et al.
+38 and Braith
+et al.4), angiotensin [Fig. 5(D)] (in qualitative accordance
+with in Braith et al.4) ﬁrst make a peak, but then drop to a
+level higher then the control levels.
+Interpretation of the results presented in Fig. 5 requires
+some further discussion, because they have been obtained
+by increasing rsna and keeping it at this higher level in
+spite of the reﬂex mechanisms, which try to decrease it
+(rsna inhibition mechanisms). Thus it would be more ap-
+propriate to interpret the behavior observed in Fig. 5 as a
+response to rsna increase combined with impairment of rsna
+inhibition. This combination is typically encountered in
+hypertension, congestive heart failure, nephrotic syndrome
+and cirrhosis.
+12 Of course, these diseases do not have the
+same aetiology. Furthermore, since the proposed model is
+constructed by combining normal physiological functions,
+
+=== PAGE 19 ===
+Long-Term Mathematical Model Involving RSNA 1625
+it cannot simulate clinical conditions. Nevertheless, since it
+includes mechanisms relating rsna, sodium excretion etc, it
+can provide insight to some causal relations between some
+common ﬁndings (particularly those related to rsna) in these
+diseases.
+The proposed model shows that an increase in rsna
+causes sodium reabsorption and renin secretion to in-
+crease, which is followed by an increase in extracellular
+ﬂuid volume and consequently increase in blood pressure.
+This causal relationship between rsna increase and blood
+FIGURE 5. Simulation results for rsna increase.
+ FIGURE 5. Continued.
+
+=== PAGE 20 ===
+1626 K ARAASLAN et al.
+FIGURE 5. Continued.
+pressure increase seems to explain the typical hypertension
+features of high rsna and high blood pressure (rsna increase
+can be considered as one of the factors contributing to high
+blood pressure in hypertension disease).
+In congestive heart failure the blood pressure is low
+because the heart fails to pump enough blood. Neverthe-
+less, since the amount of blood entering the kidneys is low,
+there is a decrease in excretion of water and sodium. Fur-
+thermore, renin secretion at the kidneys increases causing
+higher angiotensin and aldosterone secretion and conse-
+quently higher sodium and water reabsorption. As a result,
+water and sodium retension in the body increases. Addi-
+tionally, in congestive heart failure rsna is high. When rsna
+increases, renin secretion and tubular sodium reabsorption
+increases. In view of the causal relation between high rsna
+[Fig. 5(A)] and high sodium amount [Fig. 5(E)], the in-
+creased rsna in congestive heart failure can be considered
+as one of the factors contributing to sodium retension.
+Also in nephrotic syndrome and cirrhosis high rsna and
+high sodium amount are observed.
+12−14 Our simulation re-
+sults (Fig. 5) account for a causal relationship between these
+phenomena.
+Hence the proposed model can be said to provide some
+understanding of the rsna-related mechanisms governing
+mean arterial pressure increase in hypertension and to-
+tal sodium increase in congestive heart failure, nephrotic
+syndrome, and cirrhosis.
+Behavior in Case of Renal Denervation
+Under excessive sodium intake, blood volume increases
+causing an increase in arterial pressure and cardiac atrial
+pressure. Sensed by baroreceptors at cardiac and arterial
+vessel walls, these increased pressures give rise to a reﬂex
+decrease in rsna. This mechanism is referred to as “rsna in-
+hibition under sodium loading.” It causes a decrease in renin
+secretion and tubular sodium reabsorption, hence tends to
+restore the sodium balance by increasing the sodium ex-
+cretion. When the rsna inhibition mechanism is somewhat
+impaired the restoration of sodium balance after sodium
+loading becomes more difﬁcult.
+One way of checking how well the proposed model ac-
+counts for “rsna inhibition under sodium loading,” is to
+prevent the inhibition and observe the results. While in sim-
+ulations this can be achieved by keeping rsna at its steady-
+state value (preventing the rsna inhibition mechanism un-
+der sodium loading), in experiments such a situation can
+be induced by cutting the renal nerves. However, the two
+situations are not exactly the same because denervation is
+a serious pathological situation, where the extra adaptation
+mechanisms triggered are not included in this model. The
+resemblance of the simulated situation to the experimental
+case lies in the fact that rsna cannot respond to sodium
+loading in both cases.
+In the simulation rsna has been kept at its normal value
+[Fig. 6(A)] while increasing the sodium intake [Fig. 6(B)]
+10 times for 10 days. Fig. 6.(C)–(I) present the simula-
+tion results with and without rsna blockage. They exhibit
+qualitative resemblance to experimental results obtained
+from animals with renal denervation and similar sodium
+loading,
+17,28 in the sense that the mean arterial pressure in-
+crease under sodium loading is slightly higher (∼6 mmHg)
+in the case of rsna blockage as compared to the intact case
+[Fig. 6(D)]. The increase in mean arterial pressure for com-
+pensating rsna blockage is expected to be small because
+small changes in mean arterial pressure can induce large
+
+=== PAGE 21 ===
+Long-Term Mathematical Model Involving RSNA 1627
+changes in sodium excretion rate. 18 Also the decrease in
+renin concentration as a response to sodium loading is
+slightly weaker for blocked rsna compared to the intact
+case [Fig. 6(F)], similar to the results given by Greenberg
+et al.
+17 The increase in total amount of sodium as a re-
+sponse to sodium loading is slightly stronger for blocked
+rsna compared to the intact case [Fig. 6(E)], similar to the
+results in Greenberget al.17 The increase in artial natriuretic
+peptide concentration as a response to sodium loading is
+slightly stronger for blocked rsna compared to the intact
+FIGURE 6. Simulation results under sodium loading (10 times
+increase) with intact ( solid lines ) and blocked ( dotted lines )
+renal nerves.
+ FIGURE 6. Continued.
+
+=== PAGE 22 ===
+1628 K ARAASLAN et al.
+FIGURE 6. Continued.
+case [Fig. 6(H)], as theoretically expected (for blocked rsna
+the sodium accumulation in the body is higher than for
+the intact case, hence more artial natriuretic peptide is se-
+creted in order to provide higher sodium excretion from the
+kidneys). The increase in sodium excretion rate is almost
+the same both for blocked and intact rsna [Fig. 6(I)] (in
+accordance with the results presented in Greenberg et al.
+17
+and Jacob et al. 28). This can be explained in terms of a
+compensation induced by the higher increase of the mean
+arterial pressure and the atrial natriuretic peptide for the
+blocked rsna. The possibility that under sodium loading
+the effects of arterial pressure and hormones can mask the
+inﬂuence of rsna on sodium excretion rate has already been
+mentioned by Lohmeier et al.
+32
+In Fig. 6(G) the proximal tubular sodium reabsorption
+rate for the blocked rsna case is higher than for the intact
+case. This is theoretically expected since increase in rsna
+directly results in increase in tubular sodium reabsorption.
+During sodium loading, rsna decreases and causes a de-
+crease in tubular sodium reabsorption. However, in case
+the rsna is blocked during sodium loading, tubular sodium
+reabsorption will be higher than intact case.
+In Fig. 6(A) with the intact renal nerve ( solid line)r s n a
+exhibits a decreasing behavior as a response to sodium
+loading and then remains almost at the same low level
+because it does not adapt (no resetting). It can be hypothe-
+sised that if rsna had an adaptation property, after a while
+the solid line would have approached the level of the dot-
+ted line. Consequently, one would expect also the solid
+lines in Fig. 6(C), (D), and (E) to approach the dotted lines
+in the long run. Thus, it can be said that rsna adaptation
+under sodium loading would have resulted in higher long-
+term values in blood volume, mean arterial pressure and
+total sodium amount compared to lack of adaptation. These
+results support the interpretation of rsna inhibition under
+sodium loading (volume loading) as a compensatory mech-
+anism for the regulation of body ﬂuid volume. Furthermore,
+they seem to demonstrate the importance of the lack of rsna
+resetting in maintaining this compensatory mechanism in
+the long run.
+Simulation results shows that impairment of rsna inhi-
+bition under volume loading causes an increase in blood
+volume and blood pressure. It is known that there is impair-
+ment of rsna inhibition to volume loading in salt sensitive
+hypertension.
+12 In view of the causal relation between pre-
+venting rsna inhibition to volume loading and high blood
+pressure, the impairment of the rsna inhibition to volume
+loading can be considered as one of the factors contributing
+to high blood pressure in salt sensitive hypertension.
+Furthermore; the simulation results showing that the im-
+pairment of rsna inhibition under volume loading causes an
+increase in total sodium amount and it also provides an
+understanding of a causal relationship between the typ-
+ical ﬁndings (increase of total sodium amount and im-
+pairment of rsna inhibition under sodium loading) com-
+mon to congestive heart failure, nephrotic syndrome, and
+cirrhosis.
+12−14
+CONCLUSION
+High basal renal sympathetic nerve activity is known
+to contribute the pathogenesis of hypertension, congestive
+heart failure, nephrotic syndrome, and hepatic cirrhosis. In
+hypertension, congestive heart failure, nephrotic syndrome,
+and cirrhosis (sodium retention) basal renal sympathetic
+nerve activity (rsna) is known to be higher than normal. It
+has been shown that this increased rsna contributes to the
+pathogenesis of these diseases [Dibona, 1997].
+12−14
+In spite of its clinical importance, long-term mathemat-
+ical models of the cardiovascular system existing in the
+literature do not sufﬁciently account for the effect of rsna
+on kidney functions. Among the mathematical models con-
+sidered only Guyton’s model
+22 includes one aspect of renal
+sympathetic nerve activity, namely the renal vascular resis-
+tance.
+The objective of the study presented in this paper is
+the development of a cardiovascular system model that
+allows analysis of long-term interactions between rsna,
+arterial pressure, and sodium excretion. The cardiovas-
+cular system models developed by Guyton
+20,22 and the
+kidney models developed by Uttamsingh 40 and Coleman7
+
+=== PAGE 23 ===
+Long-Term Mathematical Model Involving RSNA 1629
+have been integrated, while introducing additional mech-
+anisms of direct rsna effects on tubular sodium reabsorp-
+tion and renin secretion supported by experimental data
+from literature.
+8,35 Furthermore, the dependence of rsna
+on right atrial pressure and mean arterial pressure, 10,11
+as well as the interactions between right atrial pressure,
+atrial natriuretic peptide, and sodium excretion have been
+included in the model using experimental open-loop data
+from literature.25,33 The resulting mathematical model con-
+stitutes the ﬁrst long-term model of the cardiovascular sys-
+tem accounting for the effects of the rsna on kidney func-
+tions in such detail.
+Long term tests of the model have been performed under
+blood volume increase and decrease by altering sodium
+intake. The results have shown that the model sufﬁciently
+well predicts the basic blood volume control mechanisms.
+Further tests have been performed by increasing rsna
+during normal sodium intake, and by blocking rsna during
+long-term sodium loading. These tests have also resulted
+in dynamics similar to various experimental and clinical
+observations.
+Simulation results of the proposed model provide an un-
+derstanding of some the rsna-related mechanisms in various
+diseases. Among these one can mention the rsna-increase-
+related increase of mean arterial pressure in hypertension,
+the rsna-increase-related increase of total sodium amount
+in congestive heart failure, nephrotic syndrome, and in
+cirrhosis. Similarly, the model also accounts for mecha-
+nisms which cause an increase in mean arterial pressure in
+salt-sensitive hypertension and an increase in total sodium
+amount in congestive heart failure, nephrotic syndrome,
+and cirrhosis related to the impairment of rsna inhibition
+under sodium loading.
+In addition to this, simulation results show that rsna
+inhibition to volume loading is a compensatory mechanism
+for the regulation of body ﬂuid volume. And it seems that
+the lack of rsna resetting is important to maintain this com-
+pensatory mechanism in long run.
+The model developed is restricted to the regulation
+mechanisms accounted in Guyton’s cardiovascular sys-
+tem models
+20,22 and in the kidney models of Coleman 7
+and Uttamsingh. 40 Further quantitative improvement can
+be achieved by including the effect of rsna on the tubular
+water reabsorption and the effect of aldosterone on sodium
+reabsorption at the collecting duct.
+ACKNOWLEDGMENTS
+We thank Prof. Dr. Thomas G. Coleman from the De-
+partment of Physiology and Biophysics of University of
+Mississippi Medical Center, Jackson, Mississippi, for his
+guidance and patient explanations during the development
+of the proposed model; to Assoc. Prof. Dr. Semahat Demir
+from the Biomedical Engineering Department of Memphis
+University, Memphis, TN, for her useful discussions and
+sharing her laboratory facilities and to the Research Foun-
+dation of Bogazici University for supporting the project
+03HA201D.
+REFERENCES
+1Barba, G., F. P. Cappuccio, L. Russo, F. Stinga, R. Iacone,
+and P. Strazzullo. Renal function and blood pressure response
+to dietary salt restriction in normotensive men. Hypertension
+27:1160–1164, 1996.
+2Barrett, C. J., R. Ramchandra, S.-J. Guild, A. Lala, D. M.
+Budgett, and S. C. Malpas. What sets the long-term level of
+renal sympathetic nerve activity, A role for angiotensin II and
+baroreﬂexes. Circ Res. 92:1330–1336, 2003.
+3Bigelow, J. H., J. C. Dehaven, and M. L. Shapley. System anal-
+ysis of the renal function. J. Theor. Biol. 41:287–322, 1973.
+4Braith R. W., R. M. Mills, C. S. Wilcox, V . A. Convertino, G. L.
+Davis, M. C. Limacher, and C. E. Wood. Fluid homeostasis after
+heart transplantation: The role of cardiac denervation. J. Heart
+Lung Transplant. 15:872–880, 1996.
+5Braith R. W., R. M. Mills, C. S. Wilcox, G. L. Davis, and C. E.
+Wood. Breakdown of blood pressure and body ﬂuid homeostasis
+in heart transplant recipients. J. Am. Coll. Cardiol. 27:375–383,
+1996.
+6Cameron, W. H. A model framework for computer simulation
+of overall renal function. J. Theor. Biol. 66:551–572, 1977.
+7Coleman, T. G., and J. E. Hall. A mathematical model of
+renal hemodynamics and excretory function. In: Structuring
+Biological Systems: A Computer Modelling Approach, edited
+by S. S. Iyengar. Boca Raton, Florida: CRC Press, 1992, pp. 89–
+124.
+8Denton, K. M., A. Shweta, and W. P. Anderson. Pregulomerular
+and postglomerular resistance responses to different levels of
+sympathetic activation by hypoxia. J. Am. Soc. Nephrol. 13:27–
+34, 2002.
+9DiBona, G, F., S. Y . Jones, and L. L. Sawin. Effect of endogenous
+angiotensin II on renal nerve activity and its arterial baroreﬂex
+regulation. A m .J .P h y s i o l .271 (Regul. Integr . Comp. Physiol.
+40):R361–R367, 1996.
+10DiBona, G. F., and L. L. Sawin. Reﬂex Regulation of Renal
+Nerve Activity in Cardiac Failure. Am. J. Phsiol. 266 ( Regul.
+Integr . Comp. Physiol.35):R27–R39, 1994.
+11DiBona, G. F., S. Y . Jones, and L. L. Sawin. Angiotensin receptor
+antagonist improves cardiac reﬂex control of renal sodium han-
+dling in heart failure. A m .J .P h y s i o l .274 (Heart Circ. Physiol.
+43):H636–H641, 1998.
+12DiBona, G. F., and U. C. Kopp. Neural control of renal function.
+Physiol. Rev. 77(1):75–197, 1997.
+13DiBona, G. F., L. L. Sawin, S. Y . Jones. Characteristics of renal
+sympathetic nerve activity in sodium retaining disorders. Am.
+J. Physiol. 271 (Regul. Integr . Comp. Physiol.40):R295–R302,
+1996.
+14DiBona, G. F., L. L. Sawin. Role of renal nerves in sodium
+retention of cirrhosis and congestive heart failure.A m .J .P h y s i o l .
+260 (Regul. Integr . Comp. Physiol.29):R298–R305, 1991.
+15DiDona, G. F. Neural control of the kidney: Past, present and
+future. Hypertension 41(part 2):621–624, 2003.
+16Feng, J. H., N. D. Markondu, and G. A. McGregor. Importance
+of the renin system for determining blood pressure fall with
+acute salt restriction in hypertensive and normotensive whites.
+Hypertension 38:321–325, 2001.
+17Greenberg, S. G., S. Tershner, and J. L. Osborn. Neurogenic
+regulation of rate of achieving sodium balance after increasing
+sodium intake. Am. J. Physiol. 261:F300–F307, 1991.
+
+=== PAGE 24 ===
+1630 K ARAASLAN et al.
+18Guyton A. C., A. E. Taylor, and H. J. Granger. Circulatory Phys-
+iology II: Dynamics and Control of the Body Fluids. Philadel-
+phia:W. B. Saunders Company, 1975, p. 252, 287.
+19Guyton, A. C., and J. E. Hall. Textbook of Medical Physiology.
+Philadelphia: W. B. Saunders Company, 2000, p. 202, 309.
+20Guyton, A. C., and T. G. Coleman. Long-term regulation of
+the circulation: Interrelationships with body ﬂuids volumes. In:
+Physical Bases of Circulatory Transport: Regulation and Ex-
+change, edited by E. B. Reeve and A. C. Guyton. Philadelphia:
+W. B. Saunders Company, 1967, pp. 179–201.
+21Guyton, A. C. Circulatory Physiology III: Arterial Pressure and
+Hypertension. Philadelphia: W. B. Saunders Company, 1980,
+p. 169, 172, 198, 199, 200, 201.
+22Guyton, A. C., T. G. Coleman, and H. J. Granger. Circulation:
+Overall regulation. Ann. Rev. Physiol. 34:13–46, 1972.
+23Guyton, A. C. Determination of cardiac output by equating ve-
+nous return curves with cardiac response curves. Physiol. Rev.
+35:123–129, 1955.
+24Hall, J. E., M. W. Brands. The renin angiotensin-aldosterone
+systems: Renal mechanisms and circulatory homeostasis. In:
+The Kidney, Physiology and Pathophysiology, edited by D. W.
+Seldin and G. Gebisch. Philadelphia: Lippincott Williams &
+Wilkins, 2000, p. 1038.
+25Huang W. C., and J. N. Wu. Blunted renal responses to atrial
+natriuretic peptide and its reversal by unclipping in one-kidney,
+one clip goldblatt hypertensive rats. J. Hypertens . 15(2):181–
+189, 1997.
+26Ichikawa I. Hemodynamic inﬂuence of altered distal salt de-
+livery on glomerular microcirculation. Kidney Int. 22(Suppl
+12):S109–S113, 1982.
+27Ikeda N., F. Maruo, M. Shirataka, and T. Sato. A model of overall
+regulation of body ﬂuids. Ann. Biomed. Eng. 7:135–166, 1979.
+28Jacob, F., P. Ariza, and J. W. Osborn. Renal denervation chron-
+ically lowers arterial pressure independent of dietary sodium
+intake in normal rats. Am. J. Physiol. Heart Circ. Physiol .
+284:H2302–H2310, 2003.
+29Kottke, F. J., W. G. Kubicek, and M. B. Visscher. The production
+of arterial hypertension by chronic renal-nerve stimulation.Am.
+J. Physiol. 145:38–47, 1945.
+30Kr¨uck, F., and H. J. Kramer. Third factor and edema formation.
+Cont. Nephrol. 13:12–20, 1978.
+31Lohmeier, T. E. Interactions between angiotensin II and barore-
+ﬂexes in long-term regulation of renal sympathetic nerve activ-
+ity. Circ. Res. 92:1282–1284, 2003.
+32Lohmeier, T. E., D. A. Hildebrandt, and W. A. Hood. Renal
+nerves promote sodium excretion during long-term increases in
+salt intake. Hypertension 33(part II):487–492, 1999.
+33Lohmeier, T. E., H. L. Mizelle, G. A. Reinhart, and J. P. Montani.
+Inﬂuence of angiotensin on the early progression of heart failure.
+Am. J. Physiol. Regul. Integr . Comp. Physiol . 278:R74–R86,
+2000.
+34M e j i aR . ,J .F .S a n d s ,J .L .S t e p h e n s o n ,a n dM .A .K n e p p e r .R e n a l
+actions of atrial natriuretic factor: A mathematical modeling
+study. Am. J. Physiol. 257 ( Renal Fluid Electrolyte Physiol .)
+26:F1146–F1157, 1989.
+35Miki K., Y . Hayashida, and K. Shiraki. Cardiac-renal neural
+reﬂex plays a major role in natriuresis by left atrial distention.
+A m .J .P h y s i o l .264 (Regul. Integr . Comp. Physiol. 33):R369–
+R375, 1993.
+36Nelson, L. D., and J. L. Osborn. Neurogenic control of re-
+nal function in response to graded nonhypotensive hemorrhage
+in conscious dogs. Am. J. Physiol. 264 ( Regul. Integr . Comp.
+Physiol. 33):R661–R1667, 1993.
+37Nomora, G., T. Takabatake, S. Arai, D. Uno, M. Shimao, and
+N. Hattori. Effect of acute unilateral renal denervation on tubular
+sodium reabsorption in the dog.A m .J .P h y s i o l .232(1):F16–F19,
+1977.
+38Reinhart, G. A., T. E. Lohmeier, and C. E. Hord. Hypertension
+induced by chronic renal adrenergic stimulation is angiotensin
+dependent. Hypertension. 25:940–949, 1995.
+39Singer, D. R. J., N. D. Markandu, J. J. Morton, M. A. Miller,
+G. A. Sagnella, and G. A. MacGregor. Angiotensin II suppres-
+sion is a major factor permitting excretion of an acute sodium
+load in humans. A m .J .P h y s i o l .266 ( Renal Fluid Electrolyte
+Physiol 35):F89–F93, 1994.
+40Uttamsingh, R. J., M. S. Leaning, J. A. Bushman, E. R. Carson,
+and L. Finkelstein. Mathematical model of the human renal
+system. Med. Biol. Eng. Comput . 23:525–535, 1985.
